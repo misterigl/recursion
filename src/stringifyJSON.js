@@ -5,7 +5,8 @@
 
 var stringifyJSON = function(obj) {
   // your code goes here
-  console.log("obj=", obj);
+  // console.log("obj=", obj);
+
   if (obj === null) {
   	return 'null'
   }
@@ -35,7 +36,7 @@ var stringifyJSON = function(obj) {
   }
 
   function stringifyArray (array) {
-  	console.log("stringifyArray called.");
+  	// console.log("stringifyArray called.");
   	if (array.length === 0) {
   		return '[]';
   	}
@@ -48,7 +49,7 @@ var stringifyJSON = function(obj) {
   }  	
 
   function stringifyObject(object) {
-  	console.log("stringifyObject called.");
+  	// console.log("stringifyObject called.");
   	if (Object.keys(object).length === 0) {
   		return '{}';
   	}
