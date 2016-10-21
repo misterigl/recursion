@@ -8,7 +8,7 @@ var stringifyJSON = function(obj) {
   // console.log("obj=", obj);
 
   if (obj === null) {
-  	return 'null'
+  	return 'null';
   }
 
   if (typeof obj === 'number') {
@@ -50,13 +50,18 @@ var stringifyJSON = function(obj) {
 
   function stringifyObject(object) {
   	// console.log("stringifyObject called.");
+    
   	if (Object.keys(object).length === 0) {
   		return '{}';
   	}
   	var string = '{';
   	for (key in object) {
+      if (key === 'undefined') {
+      return '{}';
+      }
   		string = string + '"' + key + '":' + stringifyJSON(object[key]) + ',';
   	}
+
   	return string.slice(0, string.length-1) + '}';
   }
 
